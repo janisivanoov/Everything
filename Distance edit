@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+class Distance{ //класс для вычисления длинны в английской системе
+private:
+int feet;
+float inches;
+public:
+Distance():feet(0), inches(0.0){} //конструктор без аргументов
+Distance(int ft, float in):feet(ft), inches(in){} //конструктор с 2-мя аргументами
+void getdist(){ //человек вводит длины
+cout<<"Введите число футов:"; 
+cin>>feet;
+cout<<"Введите число дюймов:";
+cin>>inches;
+void showdist()const{ //вывод длинн
+cout<<feet<<"\'-"<<inches;
+}
+Distance add_dist(const Distance&) const; //сложение
+};
+Distance Distance::add_dist(const Distance& d2) const{ //сложение объекта с другим и возвращение суммы
+Distance temp; //переменная которую мы создадим на время
+temp.inches = inches + d2.inches; //сложение дюймов 
+if(temp.inches >= 12.0){ //если сумма объектов будет больше 12
+temp.inches -= 12.0; // уменьшаем объект на 12 и
+temp.feet = 1; //увеличиваем число футов на 1
+}
+temp.feet += feet+d2.feet; //складывам число футов
+return temp;
+}
+int main(){
+system("chcp 1251 > nul");
+Distance dist1, dist3; //два объекта
+Distance dist2(11, 6.25); //определение и инициализация
+dist1.getdist(); //ввод первого объекта
+dist3=dist1.add_dist(dist2); // 3 объект = 1+2 объект
+//вывод всех объектов
+cout<<"Объект 1 =";
+dist1.showdist();
+cout<<"Объект 2 =";
+dist2.showdist();
+cout<<"Объект 3 =";
+dist3.showdist();
+cout<<endl;
+system("pause > nul");
+return 0;
+}
