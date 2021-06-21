@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+class MyMoney {
+	string name;
+	double money;
+	double rate;
+	int time;
+	double getMoney() {
+		double s = money;
+		for (int i = 0; i <= time; i++) {
+			s *= (1 + rate / 100);
+		}
+		return s;
+	}
+public:
+	MyMoney() {
+			name = "Janis";
+			money = 1000;
+			rate = 5;
+			time = 1;
+			cout << "You create new object\n";
+			showAll();
+	}
+	MyMoney(string n,double m, double r, int t) {
+		setAll(n, m, r, t);
+		cout << "You create new object\n";
+		showAll();
+	}
+	~MyMoney() {
+		cout << "Object created\"" << name << "\"deleted\n";
+		for (int i = 0; i <= 35; i++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+	void showAll() {
+		cout << "Name" << name << endl;
+		cout << "Invest" << money << endl;
+		cout << "Year bid" << rate << endl;
+		cout << "For how long" << time << endl;
+		cout << "Result sum:" << getMoney() << endl;
+		for (int i = 0; i <= 35; i++) {
+			cout << "-";
+		}
+		cout << endl;
+	}
+	void setAll(string n, double m, double r, int t) {
+		name = n;
+		money = m;
+		rate = r;
+		time = t;
+	}
+};
+void postman() {
+	MyMoney objD("Delivery", 1000, 8, 3);
+}
+int main() {
+	system("chcp 1251 > nul");
+	MyMoney objA;
+	MyMoney objB("Sergo", 1500, 5, 8);
+	postman();
+	MyMoney* objC = new MyMoney("Kate", 1200, 6, 9);
+	cout << "All objects are created" << endl;
+	delete objC;
+	cout << "The program was done\n";
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
