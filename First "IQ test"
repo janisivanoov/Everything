@@ -1,0 +1,84 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+const string YES = "yes";
+const string NO = "no";
+int main() {
+	int age;
+	int x;
+	int y;
+	string answer1;
+	string answer2;
+	cout << "Enter your age:" << endl;
+	cin >> age;
+	switch (age) {
+	case 16:
+		cout << "You too young but let our test begin" << endl;
+		break;
+	case 21:
+		cout << "You typical man let start" << endl;
+		break;
+	case 60:
+		cout << "You a little bit old but still OG" << endl;
+		break;
+	default:
+		cout << "You typical person let our test begin" << endl;
+	}
+	int rightquestions = 0;
+	string input;
+	double frames;
+	double frames1;
+	while (rightquestions <= 1) {
+		cout << "Let our IQ test begin" << endl;
+		cin >> input;
+
+		if (input == YES)
+		{
+			cout << "How many wonders of the world do you know??" << endl;
+			cin >> frames;
+			if (frames != 7) {
+				cout << "Thats incorrect!" << endl;
+				rightquestions++;
+				cout << "Lets go to another question?" << endl;
+				cin >> input;
+				if (input == YES) {
+					cout << "Okay lets go" << endl;
+					cout << "You Ivan?" << endl;
+					cin >> input;
+					if (input == YES) {
+						cout << "Hello father" << endl;
+					}
+				}
+
+			if (frames == 7) {
+				cout << "Thats correct!" << endl;
+				rightquestions++;
+				cout << "Lets go to another question?" << endl;
+				cin >> input;
+				if (input == YES) {
+					cout << "Okay lets go" << endl;
+				}
+
+					switch (rightquestions) {
+					case 0:
+						cout << "You lose this test! Im sorry try again!" << endl;
+						break;
+					case  1:
+						cout << "Amount of right questions is 1" << endl;
+						cout << "Your level is 50%/100%" << endl;
+						break;
+					case 2:
+						cout << "Amount of right questions is 2" << endl;
+						cout << "You answer perfectly" << endl;
+						break;
+					}
+				}
+			}
+			if (input == NO) {
+				cout << "Okay no problem" << endl;
+			}
+			return 0;
+		}
+	}
+}
