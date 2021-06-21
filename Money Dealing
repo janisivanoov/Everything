@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class MyMoney {
+private:
+	string name;
+	double money;
+	double rate;
+	int time;
+	double getMoney() {
+		double s = money;
+		for (int k = 1; k <= time; k++) {
+			s *= (1 + rate / 100);
+		}
+		return s;
+	}
+public:
+	void showAll() {
+		cout << "Name" << name << endl;
+		cout << "Invest" << money << endl;
+		cout << "Bin" << rate << endl;
+		cout << "Period" << time << endl;
+		cout << "Result" << getMoney() << endl;
+	}
+	void setAll(string n, double m, double r, int t) {
+		money = m;
+		name = n;
+		rate = r;
+		time = t;
+	}
+	void setAll(double m, double r, int t) {
+		money = m;
+		rate = r;
+		time = t;
+	}
+	void setAll(string n) {
+		name = n;
+	}
+	void setAll(int t) {
+		time = t;
+	}
+	void setAll(double m, double r) {
+		money = m;
+		rate = r;
+	}
+	void setAll(double x, bool s = true) {
+		if (s) {
+			money = x;
+		}
+		else {
+			rate = x;
+		}
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	MyMoney obj;
+	obj.setAll("Janis Ivanov", 1000, 8, 5);
+	obj.showAll();
+	cout << endl;
+	obj.setAll("Sergo");
+	obj.showAll();
+	cout << endl;
+	obj.setAll(1200.0);
+	obj.showAll();
+	cout << endl;
+	obj.setAll(10);
+	obj.showAll();
+	cout << endl;
+	obj.setAll(1500, true);
+	obj.showAll();
+	cout << endl;
+	obj.setAll(6, false);
+	obj.showAll();
+	cout << endl;
+	obj.setAll(1000, 8, 5);
+	obj.showAll();
+	system("pause > nul");
+	return 0;
+}
