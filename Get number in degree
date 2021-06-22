@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+double power(double n, int p=2);
+int main(){
+double number, answer;
+int pow;
+char yesorno;
+cout<<"Write number:";
+cin>>number;
+cout<<"You want to set this number in to degree? Write yes or no:";
+cin>>yesorno;
+if(yesorno == 'yes'){
+cout<<"Enter degree";
+cin>>pow;
+answer=power(number.pow);
+} else {
+answer = power(number);
+cout<<"Answer"<<answer<<endl;
+return 0;
+}
+double power(double n, int p){
+double result=1.0;
+for(int y=0;y<p;y++){
+result *=n;
+}
+return result;
+}
