@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+float circlarea(float radius);
+int main(){
+double rad;
+cout<<"Enter rad";
+cin>>rad;
+cout<<"The area is="<<circlearea(rad)<<endl;
+return 0;
+}
+float circlearea(float r){
+const float Pi = 3.14159F;
+return r*r*Pi;
+}
