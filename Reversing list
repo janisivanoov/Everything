@@ -1,0 +1,33 @@
+#include <iostream>
+#include <list>
+using namespace std;
+int main(){
+int k;
+list<int>thelist;
+list<int>::iterator iter1;
+list<int>::iterator iter2;
+for(k=2;k<16;k++){
+thelist.push_back(k);
+cout<<"Before reverse:";
+}
+for(iter1=thelist.begin();iter1 != thelist.end();iter1++){
+cout<<*iter1<<" ";
+iter1=thelist.begin();
+iter2=thelist.end();
+--iter2;
+}
+while(iter1 != iter2){
+swap(*iter1,*iter2);
+++iter1;
+if(iter1==iter2){
+break;
+}
+--iter2;
+}
+cout<<"After reversing:";
+for(iter1=thelist.begin();iter1 != thelist.end();iter1++){
+cout<<*iter1<<" ";
+}
+cout<<endl;
+return 0;
+}
