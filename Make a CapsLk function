@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+class String{
+private:
+char*str;
+public:
+String(char*s){
+int lenght=strlen(s);
+str=new char[lenght+1];
+strcpy(str,s);
+}
+~String(){
+delete str;
+}
+void display(){
+cout<<str;
+}
+void upit();
+};
+void String::upit(){
+char*ptrch=str;
+while(*ptrch){
+*ptrch=toupper(*pitch);
+ptrch++;
+}
+}
+int main(){
+String s1 ="Hello everyone!";
+s1.display();
+s1.upit();
+cout<<"s1 equals to";
+s1.display();
+cout<<endl;
+return 0;
+}
