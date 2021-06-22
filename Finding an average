@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main(){
+float numbers[100];
+char ch;
+int num=0;
+do{
+cout<<"Enter a number:";
+cin>>*(numbers+num++);
+cout<<"Want to continue? Enter yes or no:";
+cin>>ch;
+}
+while(ch!='no'){
+float total=0.0;
+for(int k=0;k<num;k++){
+total+=*(numbers+k);
+float average = total/num;
+}
+cout<<"Average number = "<<average<<endl;
+}
+return 0;
+}
