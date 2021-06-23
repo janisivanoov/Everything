@@ -1,0 +1,55 @@
+#include <iostream>
+#include <set>
+#include <string>
+#pragma warning(diseable:4786)
+using namespace std;
+class person{
+private:
+string lastname;
+string firstname;
+long telefon_number;
+public:
+person():
+lastname("Empty") , firstname("Empty"), telefon_number(0L){}
+person(string lona, string firstna, long tel):
+lastname(lona),firstname(firstna), telefon_number(tel){}
+friend bool operator<(const person&, const person&);
+void display() const{
+cout<<endl<<lastname<<"\t"<<firstname<<"\tTelepone:"<<telefon_number;
+}
+long get_number()const{
+return telepon_number;
+}
+};
+bool operatoor<(const person&p1, const person&p2){
+if(p1.lastname == p2.lastname){
+return (p1.firstname<p2.firstname)?true:false;
+}
+return (p1.lastname<p2.lastname)?true:false;
+}
+class comparingPersons{
+public:
+bool operator()(const person*ptrP1, const person*ptrP1<*ptrP2){
+return *ptrP1<*ptrP2;
+}
+};
+int main(){
+multiset<person*,comparingPersons>setPtrsPers;
+multiset<person*,comparingPersons>::iterator iter;
+person*ptrP1 = new person("Janis","Ivanov",19086664545);
+person*ptrP2 = new person("Ivan","Ivanov",11232164545);
+person*ptrP3 = new person("Lenin","Communist",19171917);
+person*ptrP4 = new person("Stalin","Djiguashville",1952195219);
+setPtrsPers.insert(ptrP1);
+setPtrsPers.insert(ptrP2);
+setPtrsPers.insert(ptrP3);
+setPtrsPers.insert(ptrP4);
+cout<<"Everything is done:";
+for(iter=setPtrsPers.begin();
+while(iter!=setPtrsPers.end()){
+delete *iter;
+setPtrsPers.erase(iter++);
+}
+cout<<endl;
+return 0;
+}
