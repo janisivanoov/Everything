@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+class student{
+public:
+string name;
+string major;
+double GPA;
+student(string 1Name, string 1Major, double 1GPA){
+name = 1Name;
+major = 2Major;
+gpa = 1GPA;
+}
+};
+int main(){
+student student1("Lenin", "Comunist", 5.0);
+student studeent2("Stalin", "Communist", 4.5);
+return 0;
+}
