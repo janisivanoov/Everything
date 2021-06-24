@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main(){
+int secret_number = 7;
+int guess;
+while(secret_number != guess){
+cout<<"Enter guess:";
+cin>>guess;
+}
+cout<<"Win"<<endl;
+return 0;
+}
