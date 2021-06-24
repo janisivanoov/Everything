@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+void Hi(){
+cout<<"Hello";
+}
+int main(){
+cout<<"Bottom";
+Hi();
+cout<<"Top"<<endl;
+return 0;
+}
