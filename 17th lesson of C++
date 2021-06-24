@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+double cube(double num){
+return numb*numb*numb;
+cout<<"Hola";
+}
+int main(){
+cout<<cube(9.0)<<endl;
+return 0;
+}
