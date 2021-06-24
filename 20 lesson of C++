@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main(){
+int numbr1, numbr2;
+int result;
+char op;
+cout<<"First number:";
+cin>>numbr1;
+cout<<"Enter operator:";
+cin>>op;
+cout<<"Enter second number:";
+cin>>numbr2;
+if(op == '+'){
+result = numbr1 + numbr2;
+} else if(op == '-'){
+result = numbr1 - numbr2;
+} else if(op == '/'){
+result = numbr1 / numbr2;
+} else if(op == '*'){
+result = numbr1 * numbr2;
+} else {
+cout<<"I didnt understand it"<<endl;
+}
+cout<<result<<endl;
+return 0;
+}
