@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+string color, plural_noun, celebrity;
+cout<<"Enter a color:";
+getline(cin, color);
+cout<<"Plural noun:";
+getline(cin, plural_noun);
+cout<<"Celebrity:";
+getline(cin,celebrity);
+cout<<"Color is"<<color<<endl;
+cout<<"Plural noun is"<<plural_noun<<endl;
+cout<<"Celebrity is"<<celebrity<<endl;
+return 0;
+}
