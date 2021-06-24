@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class Book{
+public:
+string title;
+string author;
+int pages;
+};
+int main(){
+Book book1;
+book1.title = "Harry Potter";
+book1.author = "JK Rowling";
+book1.pages = 400;
+Book book2;
+book2.title = "The catcher in the Rye";
+book2.author = "Selindjer";
+book2.pages = 350;
+cout<<book1.pages<<book1.titel<<book1.author<<"Thats all about book 1"<<endl;
+cout<<book2.pages<<book2.titel<<book2.author<<"Thats all about book 2"<<endl;
+return 0;
+}
