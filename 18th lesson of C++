@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main(){
+bool Male = true;
+bool Tail = true;
+if(Male && Tail){
+cout<<"Tall male)<<endl;
+} else if(Male && !Tail){
+cout<<"Short male"<<endl;
+} else if(!Male && Tail){
+cout<<"Tall, not male"<<endl;
+} else {
+cout<<"Not male. not tall"<<endl;
+}
+return 0;
+}
