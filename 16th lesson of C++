@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+void Hi(string name, int age){
+cout<<"Hola"<<name<<"you"<<age<<endl;
+}
+int main(){
+Hi("Lenin",53);
+Hi("Stalin",62);
+Hi("Valentin",14);
+return 0;
+}
