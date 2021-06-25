@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(){
+int response;
+double temper;
+cout<<"Press 1 to make Celcium from Farenheit\n"<<"Press 2 to make it in the opposit way:";
+cin>>response;
+if(response == 1){
+cout<<"Enter temp in Far.:";
+cin>>temper;
+cout<<"In celsium it willbe:"<<5.0/9.0*(temper-32.0);
+} else {
+cout<<"Temp in celsium:";
+cin>>temper;
+cout<<"In Farh. it will be:"<<9.0/5.0*(temper+32.0);
+}
+cout<<endl;
+return 0;
+}
