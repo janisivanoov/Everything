@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main(){
+double n1, n2, ans;
+char oper, ch;
+do{
+cout<<"Enter first operand,operation and second operand:";
+cin>>n1>>oper>>n2;
+switch(oper){
+case '+': 
+ans = n1+n2;
+break;
+case '-':
+ans = n1-n2;
+break;
+case '*':
+ans = n1*n2;
+break;
+case '/':
+ans = n1/n2;
+break;
+default:
+cout<<"Wrong"<<endl;
+}
+cout<<"Answer is:"<<ans;
+cout<<"Continue? y or n:";
+cin>>ch;
+}
+while(ch!='n'));
+return 0;
+}
