@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+class Time{
+private:
+int hour, mins, seconds;
+public:
+Time():hours(0),mins(0),seconds(0){}
+Time(int h,int m,int s):hours(h), mins(m), seconds(s){}
+void display_time(){
+cout<<hours<<":"<<mins<<":"<<seconds<<endl;
+}
+void adding_time(Time t1, Time t2){
+seconds = T1.seconds + T2.seconds;
+if(seconds>59){
+seconds-=60;
+mins++;
+}
+mins+=T1.mins+T2.mins;
+if(mins>59){
+mins-=60;
+hours++;
+}
+hours+=T.hours+T2.hours;
+}
+};
+int main(){
+system("chcp 1251 > nul");
+const Time Time1(5,59,59);
+const Time Time2(4,30,30);
+Time Time3;
+Time3.adding_time(Time1,Time2);
+cout<<"Time 3 =";
+Time3.display_time();
+cout<<endl;
+system("pause > nul");
+return 0;
+}
