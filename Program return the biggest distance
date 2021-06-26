@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+struct Distance{
+int feet;
+float inches;
+};
+Distance bigengl(Distance,Distance);
+void enngldisp(Distance);
+int main(){
+system("chcp 1251 > nul");
+Distance d1, d2, d3;
+cout<<"Enter feet:";
+cin>>d1.feet;
+cout<<"Enter inches:";
+cin>>d1.inches;
+cout<<"Enter another feet:";
+cin>>d2.feet;
+cout<<"Enter another inches:";
+cin>>d2.inches;
+d3=bigengl(d1,d2);
+cout<<"d1=";
+endldisp(d1);
+cout<<"\nd2=";
+endldisp(d2);
+cout<<"\n The biggest one is:";
+endldisp(d3);
+cout<<endl;
+system("pause > nul");
+return 0;
+}
+Distance bigengl(Distance dd1, Distance dd2){
+if(dd1.feet>d2.feet){
+return dd1;
+}
+if(dd1.feet<dd2.feet){
+return dd2;
+}
+if(dd1.inches>dd2.icnhes){
+return dd1;
+} else {
+return dd2;
+}
+void engldisp(Distance dd){
+cout<<dd.feet<<"and"<<dd.inches;
+cout<<endl;
+}
+
+
+
