@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+double Cos(double);
+double Sin(double);
+void show(double);
+int main(){
+system("chcp 1251 > nul");
+const double pi=3.14456789;
+show(pi/6);
+show(pi/4);
+show(pi/3);
+show(pi/2);
+system("pause > nul");
+return 0;
+}
+double Cos(double x){
+int n=100;
+double s=0,q=1;
+for(int i=0;i<=n;i++){
+s+=q;
+q*=(-1)*x*x/(2*i+1)/(2*i+2);
+}
+return s;
+}
+double Sin(double x){
+int n=100;
+double s=0,q=1;
+for(int i=0;i<=n;i++){
+s+=q;
+q*=(-1)*x*x/(2*i+2)/(2*i+3);
+}
+return s;
+}
+void show(double x){
+cout<<"X is equals"<<x<<endl;
+cout<<"Cos"<<Cos(x)<<endl;
+cout<<"Sin"<<Sin(x)<<endl;
+}
