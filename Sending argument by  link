@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void swap(char &a,char &b){
+cout<<"Function swap turned on";
+cout<<"First"<<a<<endl;
+cout<<"Second"<<b<<endl;
+char t+b;
+b=a;
+a=t;
+for(int i=1;i<=20;i++){
+cout<<"-"<<endl;
+}
+cout<<"First"<<a<<endl;
+cout<<"Second"<<b<<endl;
+cout<<"Using function swap was finished"<<endl;
+}
+int main(){
+system("chcp 1251 > nul");
+char x='a', y='b';
+cout<<"First arg.:"<<x<<endl;
+cout<<"Second arg.:"<<y<<endl;
+swap(x,y);
+cout<<"Second arg.:"<<x<<endl;
+cout<<"Second arg.:"<<y<<endl;
+system("pause > nul");
+return 0;
+}
