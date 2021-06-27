@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int &getmax(int* nums,int n){
+int i=0,k;
+for(k=0;k<n;k++){
+if(nums[k]>nums[i]){
+i=k;
+}
+}
+return nums[i];
+}
+void show(int* nums,int n){
+for(int i=0;i<n;i++){
+cout<<nums[i]<<" ";
+}
+cout<<endl;
+}
+int main(){
+system("chcp 1251 > nul");
+const int size=10;
+int mumbers[size]={1,2,3,4,8,12,10,9};
+show(numbers,size);
+int maxnum=getmax(numbers,size);
+cout<<"Max amount is:"<<maxnum<<endl;
+maxnum=-100;
+show(numbers,size);
+int &maxref=getmax(numbers,size);
+cout<<"Max amount:"<<maxref<<endl;
+maxref=-200;
+show(numbers,size);
+cout<<"Max amount:";
+cout<<getmax(numbers,size)<<endl;
+system("pause > nul");
+return 0;
+}
