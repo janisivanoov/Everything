@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+template<class X> void show(X x){
+cout<<"Function with 1 argument";
+cout<<"Argument equals:"<<x<<endl;
+}
+template<class X, class Y> void show(X x, Y y){
+cout<<"Funtion with 2 arguments:";
+cout<<"First one:"<<x<<endl;
+cout<<"Second one:"<<y<<endl;
+}
+int main(){
+system("chcp 1251 > nul");
+show('A');
+show(123);
+show("Text");
+show(321,"Text");
+show('B'.456);
+show('C','B');
+system("pause > nul");
+return 0;
+}
