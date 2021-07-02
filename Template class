@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+template<class A,class B> class Class{
+public:
+A first;
+B second;
+Class(A f, B s){
+first=f;
+second=s;
+}
+void show(){
+cout<<"first:"<<first<<endl;
+cout<<"second:"<<second<<endl;
+}
+};
+int main(){
+system("chcp 1251 > nul");
+Class<int,char>objA(100,'A');
+Class<string,double>objB("text",10.5);
+Class<char*,string>objC("first","second");
+Class<int,int>objD(1,3);
+objA.show();
+objB.show();
+objC.show();
+objD.show();
+system("pause > nul");
+return 0;
+}
