@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+using namespace std;
+system("chcp 1251>nul");
+srand(2);
+int n;
+cout<<"Symbols:";
+cin>>n;
+vector<char>symbs(n);
+cout<<"|";
+for(int k=0;k<symbs.size();k++){
+symbs[k]='A'+rand()%(n+5);
+cout<<" "<<symbs[k]<<"|";
+}
+cout<<endl;
+system("pause > nul");
+return 0;
+}
