@@ -1,0 +1,26 @@
+#include <msoftcon.h>
+#include <cstdlib>
+struct circle{
+int xCo,yCo;
+int radius;
+color fillcolor;
+fstyle fill stule;
+};
+void circ_draw(circle c){
+set_color(c.fillcolor);
+set_fill_style(c.fillstyle);
+draw_circle(c.xCo,c.yCo,c.radius);
+}
+int main(){
+system("chcp 1251 > nul");
+init_graphics();
+circle c1={15,7,5,cBLUE,X_FILL);
+circle c2={41,12,8,cRED,O_FILL);
+circle c3={65,18,4,cGREEN,MEDIUM_FILL);
+circle_draw(c1);
+circle_draw(c2);
+circle_draw(c3);
+set_cursor_pos(1,25);
+system("pause > nul");
+return 0;
+}
