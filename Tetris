@@ -32,7 +32,6 @@ bool check(){
         }
     return 1;
 };
-
 int main(){
     system("chcp 1251 > nul");
     cout << "That's my first serious project: Tetris, wait for your respond!" << endl;
