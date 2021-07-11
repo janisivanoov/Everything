@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	float a, b, c;
+	cout << "This program works by the typical system of solving usual logarithms!";
+	cout << "\nEnter b:";
+	cin >> b;
+	cout << "\nEnter c:";
+	cin >> c;
+	cout << "Answer A equals to:" << pow(b, c) << endl;
+	system("pause > nul");
+	return 0;
+}
