@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+enum posneg{ pos, neg };
+class Distance{
+protected:
+int feet;
+float inches;
+public:
+Distance():feet(0), inches(0.0){}
+Distance(int ft, float in):feet(ft),inches(in){}
+void getdist(){
+cout<<"Enter feet:";
+cin>>feet;
+cout<<"\nEnter inches:";
+cin>>inches;
+}
+void showdist(){
+cout<<feet<<","<<inches<<"."<<endl;
+}
+};
+class DistSing:public Distance{
+private:
+posneg sing;
+public:
+DistSing(int ft, float in, posneg sg = pos);
+Distance(ft, in){
+sing = sg;
+}
+void getdist(){
+Distance::getdist();
+char ch;
+cout<<"Enter a symbol + or -";
+cin>>ch;
+sign=(ch=='+')?pos:neg;
+}
+void showdist()const{
+cout<<((sign == pos)?"(+)":"(-)";
+Distance::showdist();
+}
+};
+int main(){
+system("chcp 1251 > nul");
+DistSign alpha;
+alpha.getdist();
+DistSign beta(11,6.25);
+DistSign gamma(100,5.5, neg);
+cout<<"A="; //thats alpha
+alpha.showdist();
+cout<<"B="; //thats beta
+beta.showdist();
+cout<<"C="; // thats gamma
+gamma.showdist();
+system("pause > nul");
+return 0;
+}
