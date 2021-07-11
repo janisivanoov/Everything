@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main(){
+system("chcp 1251 > nul");
+int year = 2021;
+double price = 4465.66;
+char status = 'N';
+string make = "Tesla";
+string model = "Mustang";
+bool for_sale = true;
+string car = make +" "+model;
+cout<<"Year:"<<year<<endl;
+cout<<"Price:"<<price<<endl;
+cout<<"New/Used"<<status<<endl;
+cout<<"Car"<<car<<endl;
+cout<<"Availability:"<<for_sale<<endl;
+system("pause > nul");
+return 0;
+}
