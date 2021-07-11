@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+const int len = 80;
+class employe{
+private:
+char name[len];
+unsigned long number;
+public:
+void getdata(){
+cout<<"Enter a surname:";
+cin>>name;
+cout<<"\nEnter a number:";
+cin>>number;
+}
+void putdata() const {
+cout<<"Surname:"<<name;
+cout<<"Number:"<<number;
+}
+};
+class manager: public employe{
+private:
+char title[len];
+double dues;
+public:
+void getdata(){
+employe::getdata();
+cout<<"Enter a title:";
+cin>>title;
+cout<<"Enter a summ of an invest:";
+cin>>dues;
+}
+void putdata() const {
+employe::putdata();
+cout<<"Title"<<title<<endl;
+cout<<"An dues equals to:"<<dues<<endl;
+}
+};
+class scientist: public employe{
+private:
+int pubs;
+public:
+void getdata(){
+employe::getdata();
+cout<<"A number of published titles is:";
+cin>>pubs;
+}
+void putdata() const{
+employe::putdata();
+cout<<"\nA number of published titles is equals:"<<pubs<<endl;
+}
+};
+class laborer: public employe{
+};
+int main(){
+system("chcp 1251 > nul");
+manager m1 , m2;
+scientist s1;
+laborer l1;
+cout<<endl;
+cout<<"Enter info about first manager:";
+m1.getdata();
+cout<<"\nEnter info about second manager:";
+m2.getdata();
+cout<<"\nEnter info about scientist:";
+s1.getdata;
+cout<<"\nEnter info about first labour:";
+l1.getdata();
+cout<<"\nInfo about first manager:";
+m1.putdata();
+cout<<"\nInfo about second manager:";
+m2.putdata();
+cout<<"\nInfo about scientist:";
+s1.putdata();
+cout<<"Info about labour:";
+l1.putdata();
+cout<<endl;
+system("pause > nul");
+return 0;
+}
