@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main(){
+system("chcp 1251 > nul");
+double x, y;
+cout<<"Enter a first number:"<<endl;
+cin>>x;
+cout<<"Enter another number:"<<endl;
+cin>>y;
+cout<<(double) x/y<<endl;
+double z = max(x,y); //you can use min or max function it depends but it will still works
+cout<<endl;
+system("pause > nul");
+return 0;
+}
