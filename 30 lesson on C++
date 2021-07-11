@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int main(){
+system("chcp 1251 > nul");
+string answer;
+do{
+cout<<"U playing the game"<<endl;
+cout<<"press q to quit"<<endl;
+getline(cin, answer);
+cout<<"----------------------"<<endl;
+} while(answer.at(0)!='q' && answer.at(0)!='Q');
+cout<<"U quit the game!"<<endl;
+cout<<endl;
+system("pause > nul");
+return 0;
+}
