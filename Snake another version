@@ -57,10 +57,10 @@ void Tick() {
 int main(){  
     system("chcp 1251 > nul");
     srand(time(0));
-    RenderWindow window(VideoMode(w, h), "Snake Game!");
+    RenderWindow window(VideoMode(w, h), "Snake");
     Texture t1,t2;
-    t1.loadFromFile("images/white.png");
-    t2.loadFromFile("images/red.png");
+    t1.loadFromFile("images/color1.png"); //use every image you want 
+    t2.loadFromFile("images/color2.png"); //use every image you want
     Sprite sprite1(t1);
     Sprite sprite2(t2);
     Clock clock;
