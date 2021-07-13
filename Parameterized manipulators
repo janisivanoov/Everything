@@ -1,0 +1,14 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	double d[] = { 1.234,-12.34567,123.456789,-1.234,0.00001 };
+	cout << setfill('.') << setprecision(4) << setiosflags(ios::showpoint | ios::fixed);
+	for (int i = 0; i < 5; i++) {
+		cout << setw(12) << d[i];
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
