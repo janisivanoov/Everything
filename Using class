@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+class employe {
+private:
+	int salary;
+	int age;
+public:
+	void get_data() {
+		cout << "Enter a salary:";
+		cin >> salary;
+		cout << "Enter an age:";
+		cin >> age;
+	}
+	void out_data() const {
+		cout << "A salary is:" << salary << endl;
+		cout << "A age is equals:" << age << endl;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	employe emp1;
+	emp1.get_data();
+	cout << "Okay let see what we have here:" << endl;
+	emp1.out_data();
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
