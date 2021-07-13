@@ -1,0 +1,20 @@
+#include <fstream>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char text[81], buf[81];
+	cout << "Enter a file name:";
+	cin >> text;
+	ifstream f(text, ios::in | ios::_Nocreate);
+	if (!f) {
+		cout << "There are a mistake!" << endl;
+	}
+	while (!f.eof()) {
+		f.getline(buf, 81);
+		cout << buf << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
