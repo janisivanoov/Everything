@@ -1,0 +1,19 @@
+#include <sstream>
+#include <string>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+string message(int i) {
+	ostringstream os;
+	time_t t;
+	time(&t);
+	os << "time" << ctime(&t) << "number:" << i << endl;
+	return os.str();
+}
+int main() {
+	system("chcp 1251 > nul");
+	cout << message(22) << endl;
+	system("pause > nul");
+	return 0;
+}
