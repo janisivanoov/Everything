@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	enum paytype{CARD, CHECK};
+	struct {
+		paytype ptype;
+		union {
+			char card[25];
+			long check;
+		};
+	} info;
+	switch (info.ptype) {
+	case CARD:
+		cout << "Card" << info.card << endl;
+		break;
+	case CHECK: 
+		cout << "Check" << info.check << endl;
+		break;
+	default:
+		cout << "IDK it!" << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
