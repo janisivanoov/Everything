@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class X {
+public:
+	virtual void fun(int a = 0) {
+		cout << a;
+	}
+};
+class Y : public X {
+public:
+	virtual void fun(int a = 1) {
+		cout << a;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	X* px = new X;
+	px->fun();
+	X* py = new Y;
+	py->fun();
+	system("pause > nul");
+	return 0;
+}
