@@ -1,0 +1,22 @@
+#include <string>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	string s1("Alex Rubanov - fool"), s2("Lion"), s3("Snikers");
+	cout << "s1" << s1 << endl;
+	cout << "s2" << s2 << endl;
+	cout << "s3" << s3 << endl;
+	if (s2.compare(s3) > ) {
+		cout << "s2 > s3" << endl;
+	} 
+	if (s1.compare(1, 2, s3) < 0) {
+		cout << "s1[1-2]<s3" << endl;
+	}
+	if (s1.compare(1, 2, s3, 3 ,5) == 0) {
+		cout << "s1[1-2]==s3[3-5]" << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
