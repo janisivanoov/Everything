@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+#include <typeinfo>
+using namespace std;
+class B {
+public:
+	virtual void f1(){}
+};
+class C : public B {
+public: 
+	void f2() {
+		cout << "f2" << endl;
+	}
+};
+void demo(B* p) {
+	C* c = dynamic_cast<C*>(p);
+	if (c)c->f2();
+	else cout << "Sented not a C class" << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	B* b = new B;
+	demo(b);
+	C* c = new C;
+	demo(c);
+	system("pause > nul");
+	return 0;
+}
