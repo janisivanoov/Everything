@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+#include <ctype.h>
+#include <stdlib.h>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char ch;
+	ofstream out("test");
+	if (!out) {
+		cout << "Cannot open file" << endl;
+		return 1;
+	}
+	char str[80], * p;
+	out << 123 << "this is a test DUDE" << 23;
+	out << "HOLA" << 99 << "Bye" << endl;
+	out.close();
+	ifstream it("test", ios::in | ios::_Nocreate);
+	if (!in) {
+		cout << "Cannot open file" << endl;
+		return 1;
+	}
+	do {
+		p = str;
+		ch = in.peek();
+		if (isdigit(ch)) {
+			while (isdigit(*p = in.get()))p++;
+			in.putback();
+			*p = '\0';
+			cout << "String" << str;
+		}
+		else if (isalpha(ch)) {
+			while (isalpha(*p = in.get()))p++;
+			in.putback(*p);
+			*p = '\0';
+			cout << "String" << str;
+		}
+		else in.get();
+		cout << endl;
+	} while (!in.eof());
+	system("pause > nul");
+	return 0;
+}
