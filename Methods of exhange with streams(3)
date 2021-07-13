@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	ofstream out("test");
+	if (!out) {
+		cout << "Cannot open file 'test' for writing" << endl;
+		return 1;
+	}
+	char* str[] = {
+	"First"
+	"Second"
+	"Third"
+	};
+	for (int i = 0; i < 3; i++) {
+		out.write(str[i], strlen(str[i]));
+		out.put('\n');
+	}
+	out.close();
+	ifstream in("test", ios::in | ios::_Nocreate);
+	if (!in) {
+		cout << "Cannot open file 'test' for reading" << endl;
+		return 1;
+	}
+	char check_str[3][60];
+	for (int i = 0; i < 3; ++i) {
+		in.get(check_str[i], 60);
+		in.get();
+	}
+	for (int i = 0; i < 3; ++i) {
+		cout << check_str[i] << endl;
+	}
+	in.close();
+	system("pause > nul");
+	return 0;
+}
