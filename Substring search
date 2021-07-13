@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	string s1("Spider-Man"), s2("Wonder Woman");
+	cout << "s1" << s1 << endl;
+	cout << "s2" << s2 << endl;
+	int i = s1.find(s2);
+	int j = s1.rfind(s2);
+	cout << "first s2 in s1" << i << endl;
+	cout << "Last s2 in s1" << j << endl;
+	cout << "first A in s1" << s1.find('a') << endl;
+	cout << "last A in s1" << s1.rfind('a') << endl;
+	cout << "first in s1" << s1.find_first_not_of("spid") << endl;
+	cout << "last in s1" << s1.find_last_not_of("an") << endl;
+	system("pause > nul");
+	return 0;
+}
