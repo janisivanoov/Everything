@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class MyClass {
+	int x;
+	float y;
+public:
+	MyClass(int nx = 1, float ny = 0.01) {
+		x = nx;
+		y = ny;
+	}
+	friend ostream& operator<<(ostream& out, MyClass& C) {
+		return out << "x=" << C.x << "y=" << C.y << endl;
+	}
+	friend istream& operator>>(istream& out, MyClass& C) {
+		cout << "enter an x:";
+		in >> C.x;
+		cout << "Enter an y:";
+		in >> C.y;
+		return in;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	MyClass C;
+	cout << C << endl;
+	MyClass C1(100, 100);
+	cout << C1 << endl;
+	MyClass C2;
+	cin >> C2;
+	cout << C2 << endl;
+	system("pause > nul");
+	return 0;
+}
