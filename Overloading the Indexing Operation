@@ -1,0 +1,50 @@
+#include <iostream>
+#include <stdlib.h>
+#include <cstdlib>
+using namespace std;
+class Vect {
+public:
+	explicit Vect(int n = 10);
+	Vect(const int a[], int n);
+	~Vect() {
+		delete[] p;
+	}
+	int& operator[](int i);
+	void Print();
+private:
+	int* p;
+	int size;
+};
+Vect::Vect(const int a[], int n) :size(n) {
+	p = new int[size];
+}
+Vect::Vect(const int a[], int n) : size(n) {
+	p = new int[size];
+	for (int i = 0; i < size; i++) {
+		p[i] = a[i];
+	}
+}
+int& Vect::operator[](int i) {
+	if (i < 0 || i >= size) {
+		cout << "Not this inde(i=" << i << ")" << endl;
+		cout << "Finishing program" << endl;
+		exit(0);
+	}
+	return p[i];
+}
+void Vect::Print() {
+	for (int i = 0; i < size; i++) {
+		cout << p[i] << " ";
+	}
+	cout << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	Vect a(arr, 10);
+	a.Print();
+	cout << a[5] << endl;
+	cout << a[12] << endl;
+	system("pause > nul");
+	return 0;
+}
