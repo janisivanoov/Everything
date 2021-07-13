@@ -1,0 +1,31 @@
+#include <cstring>
+#include <string>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char c1[80], c2[80], c3[80];
+	string s1, s2, s3;
+	strcpy(c1, "old string 1");
+	strcpy(c2, c1);
+	s1 = "new string 1";
+	s2 = s1;
+	strcpy(c3, c1);
+	strcpy(c3, c2);
+	s3 = s2 + s1;
+	if (strcmp(c2, c3) < 0) {
+		cout << c2;
+	}
+	else {
+		cout << c3;
+	}
+	if (s2 < s3) {
+		cout << s2;
+	}
+	else {
+		cout << s3;
+	}
+	system("pause > nul");
+	return 0;
+}
