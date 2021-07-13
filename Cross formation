@@ -1,0 +1,25 @@
+#include <iostream>
+#include <typeinfo>
+#include <cstdlib>
+using namespace std;
+class B {
+public:
+	virtual void f1();
+};
+class C : public B {
+public:
+	void f2(){}
+};
+class D: public B{};
+void demo(D* p) {
+	C* c = dynamic_cast<C*>(p);
+	if (c)c->f2();
+	else cout << "Not already done!" << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	B* b = new C;
+	demo((D*)b);
+	system("pause > nul");
+	return 0;
+}
