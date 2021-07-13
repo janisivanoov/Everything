@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+#include <typeinfo>
+using namespace std;
+class B {
+public:
+	virtual ~B() {};
+};
+class C : public B {
+public: 
+	virtual void some_method_we_make() {};
+};
+void demo(B* p) {
+	if (typeid(*p) == typeid(C)) {
+		dynamic_cast<C*>(p)->some_method_we_make();
+	}
+}
+int main() {
+	system("chcp 1251 > nul");
+	C* c = new C;
+	demo(c);
+	system("pause > nul");
+	return 0;
+}
