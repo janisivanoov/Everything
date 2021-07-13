@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	long a = 1000, b = 077;
+	cout.width(7);
+	cout.setf(ios::hex | ios::showbase | ios::uppercase);
+	cout << a;
+	cout.width(7);
+	cout << b << endl;
+	double d = 0.12, c = 1.3e-4;
+	cout.setf(ios::left);
+	cout << d << endl;
+	cout << c;
+	system("pause > nul");
+	return 0;
+}
