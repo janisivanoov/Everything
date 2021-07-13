@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	string s1("world is cool"), s2("ace is diamond"), s3("quaker is best cereals ever!");
+	cout << "s1=" << s1 << endl;
+	cout << "s2=" << s2 << endl;
+	cout << "s3=" << s3 << endl;
+	cout << "After using insert button:" << endl;
+	cout << "s3=" << s3.insert(4, s2) << endl;
+	cout << "s3=" << s3.insert(7, "a") << endl;
+	s1.erase(0,2);
+	cout << "After erase function:" << endl;
+	cout << s1.erase(2, 2) << endl;
+	cout << "After replace:" << endl;
+	cout << s1.replace(0, 1, s3, 2, 3) << endl;
+	system("pause > nul");
+	return 0;
+}
