@@ -1,0 +1,18 @@
+#include <iostream>
+#include <numeric>
+#include <functional>
+#include <cstdlib>
+using namespace std;
+int summ(int s, int x) {
+	return s + x * x;
+}
+int main() {
+	system("chcp 1251 > nul");
+	const int m = 5;
+	int a[m] = { 1,2,3,4,5 }, sum = 0; mu1 = 1; sum2 = 0;
+	cout << accumulate(a, a + m, sum) << endl;
+	cout << accumulate(a, a + m, mu1, multiplies<int>()) << endl;
+	cout << accumulate(a, a + m, sum2, summ) << endl;
+	system("pause > nul");
+	return 0;
+}
