@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <map>
+using namespace std;
+typedef map < string, long, less<string> map_s1;
+typedef pair <string, long> pair_s1;
+int main() {
+	system("chcp 1251 > nul");
+	pair_s1 p[3]{
+		pair_s1("Janis", 123456),
+		pair_s1("Victor", 123456),
+		pair_s1("Bogdan Cheats",123456)
+	};
+	map_s1 m1;
+	map_s1::iterator i = m1.begin();
+	for (int k = 0; k < 3; k++) {
+		i = m1.insert(i, p[k]);
+	}
+	for (i = m1.begin(); i != m1.end(); i++) {
+		cout << (*i).first << " " << (*i).second << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
