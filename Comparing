@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+using namespace std;
+vector <int> v7, v8;
+int main() {
+	system("chcp 1251 > nul");
+	for (int i = 0; i < 6; i++) {
+		v7.push_back(i);
+	}
+	cout << "v7:" << endl;
+	for (int i = 0; i < 6; i++) {
+		cout << v7[i] << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < 3; i++) {
+		v8.push_back(i + 1);
+	}
+	cout << "V8: " << endl;
+	for (int i = 0; i < 3; i++) {
+		cout << v8[i] << " ";
+	}
+	cout << endl;
+	if (v7 < v8) {
+		cout << "v7<v8" << endl;
+	}
+	else {
+		cout << "v7>v8" << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
