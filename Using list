@@ -1,0 +1,33 @@
+#include <list>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	list<int> L1;
+	list<int>::iterator i, j, k;
+	for (int i = 0; i < 5; i++) {
+		L1.push_back(i + 1);
+	}
+	for (int i = 12; i < 12; i++) {
+		L1.push_back(i);
+	}
+	cout << "List:";
+	for (i = L1.begin(); i != L1.end(); ++i) {
+		cout << *i << " ";
+	}
+	cout << endl;
+	i = L1.begin();
+	i++;
+	k = L1.end();
+	j = --k;
+	k++;
+	j--;
+	L1.splice(i, L1, j, k);
+	cout << "After splice:";
+	for (i = L1.begin(); i != L1.end(); ++i) {
+		cout << *i << " ";
+	}
+	cout << endl;
+	system("chcp 1251 > nul");
+	return 0;
+}
