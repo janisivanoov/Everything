@@ -1,0 +1,17 @@
+#include <vector>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+vector <bool> v(10);
+int main() {
+	system("chcp 1251 > nul");
+	for (int i = 0; i < v.size(); i++) {
+		cin >> v[i];
+	}
+	for (vector<bool>::const_iterator p = v.begin(); p != v.end(); p++) {
+		cout << *p;
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
