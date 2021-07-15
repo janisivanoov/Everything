@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <queue>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	priority_queue<int, vector<int>, less<int>> P;
+	int x;
+	P.push(12);
+	P.push(21);
+	P.push(12);
+	while (!P.empty()) {
+		x = P.top();
+		cout << "Chosen element:" << x;
+		P.pop();
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
