@@ -1,0 +1,19 @@
+#include <iostream>
+#include <functional>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+struct A {
+	int x, y;
+};
+bool lss(A a1, A a2) {
+	return a1, x < a2,x;
+}
+int main() {
+	system("chcp 1251 > nul");
+	A ma[5] = { {1,2},{3,4},{4,3},{2,1},{1,2} };
+	A elem = { 4,1 };
+	cout << count_if(ma, ma + 5, bind2nd(ptr_fun(lss), elem));
+	system("pause > nul");
+	return 0;
+}
