@@ -1,0 +1,23 @@
+#include <fstream>
+#include <vector>
+#include <stack>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	ifstream in("in");
+	stack <int, vector<int>>s;
+	int x;
+	while (in >> x, !in.eof()) {
+		s.push(x);
+	}
+	while (!s.empty()) {
+		x = s.top();
+		cout << x << " ";
+		s.pop();
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
