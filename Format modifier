@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int int1 = 45, int2 = 13;
+	float f = 3.621;
+	double db1 = 2.23;
+	char ch = 'z', * str = "salam";
+	printf("int1 = %d|int2=%3d|int2=%-4d|\n", int1, int2);
+	printf("int1 = %X|int2=%3x|int2=%-4o|\n", int1, int2);
+	printf("f = %f|f=%4.2f|f=%6.2f|\n", f, f);
+	printf("f = %g|f=%e|int2=%+E|\n", f, f);
+	printf("db1 = %5.21f|db1=%e|db1=%4.1G|\n", db1, db1);
+	printf("ch = %c|ch=%3c|\n", ch, ch);
+	printf("str = %14s|\nstr=%-14s|\nstr=%s|\n", str, str);
+	system("pause > nul");
+	return 0;
+}
