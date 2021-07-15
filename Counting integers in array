@@ -1,0 +1,12 @@
+#include <iostream>
+#include <functional>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int m[8] = { 10,11,12,13,15,14,16,18,};
+	cout << count_if(m, m + 8, bind2nd(less<int>(), 13));
+	system("pause > nul");
+	return 0;
+}
