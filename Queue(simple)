@@ -1,0 +1,25 @@
+#include <fstream>
+#include <list>
+#include <queue>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	ifstream in("in");
+	queue <int, list<int>>q;
+	int x;
+	while (in >> x, !in.eof()) {
+		q.push(x);
+	}
+	cout << "front" << q.front() << " ";
+	cout << "back" << q.back() <<endl;
+	while (!q.empty()) {
+		q.pop();
+		cout << "front" << q.front() << " ";
+		cout << "back" << q.back() << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
