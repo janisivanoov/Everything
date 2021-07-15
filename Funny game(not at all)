@@ -1,0 +1,91 @@
+#include <iostream>
+#include <vector>
+#include <functional>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+enum color { red, green, blue };
+class monstr {
+	int health, ammo;
+	color skin;
+	char* name;
+public:
+	monstr(int he = 100, int am = 100);
+	monstr(color sk);
+	monstr(char* nam);
+	monstr(const monstr& M);
+	~monstr() {
+		delete[] name;
+	}
+	operator int() {
+		return health;
+	}
+	int get_health() {
+		return health;
+	}
+	friend ostream& operator<<(ostream& out, monstr& m) {
+		return out << "monstr:" << "ammo=" << m.ammo << "health:" << m.health << endl;
+	}
+};
+monstr::monstr(int he, int am) :health(he), ammo(am), skin(red), name(0) {}
+monstr::monstr(const monstr& M) {
+	if (M.name) {
+		name = new char[strlen(M.name) + 1];
+		strcpy(name, M.name);
+	}
+	else {
+		name = 0;
+	}
+	health = M.health;
+	ammo = M.ammo;
+	skin = M.skin;
+}
+monstr::monstr(color sk) {
+	switch (sk) {
+	case red:
+		health = 1;
+		ammo = 10;
+		skin = red;
+		name = 0;
+		break;
+	case green:
+		health = 2; 
+		ammo = 20;
+		skin = green;
+		name = 0;
+		break;
+	case blue:
+		health = 3;
+		ammo = 40;
+		skin = blue;
+		name = 0;
+		break;
+	}
+}
+monstr::monstr(char* nam) {
+	name = new char[strlen(nam) + 1];
+	strcpy(name, nam);
+	health = 200;
+	ammo = 100;
+	skin = red;
+}
+bool less_health(monstr m1, monstr m2) {
+	return m1.get_health() < m2.get_health();
+}
+int main() {
+	system("chcp 1251 > nul");
+	vector <monstr> m;
+	monstr M(10, 30);
+	m.push_back(M);
+	m.push_back(monstr("Janis"));
+	m.push_back(monstr(red));
+	cout << "Monstr:" << endl;
+	for (int i = 0; i < m.size(); i++) {
+		cout << m[i] << " ";
+	}
+	cout << endl;
+	cout << "Count if:";
+	cout << count_if(m.begin(), m.end(), bind2nd(ptr_fun(less_health), 20));
+	system("pause > nul");
+	return 0;
+}
