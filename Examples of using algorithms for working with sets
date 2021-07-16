@@ -1,0 +1,38 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+void show(const char* s, const int* begin, const int* end) {
+	cout << s << " ";
+	copy(begin, end, ostream_iterator<int>(cout, " "));
+	cout << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	int a[4] = { 1,2,3,4 }, b[3] = { 5,6,7 }, Union[5], * p_union, isect[4], * p_isect, dif[3], * p_dif, symbdif[5], * p_symdif;
+	p_isect = set_intersection(a, a + 4, b, b + 3, isect);
+	p_union = set_union(a, a + 4, b, b + 3, Union);
+	p_dif = set_difference(a, a + 4, b, b + 3, dif);
+	p_symdif = set_symmetric_difference(a, a + 4, b, b + 3, symdif);
+	show("a: ", a, a + 4);
+	show("b: ", b, b + 3);
+	show("isect: ", isect, p_isect);
+	show("union: ", Union, p_union);
+	show("dif: ", dif, p_dif);
+	show("symdif: ", symdif, p_symdif);
+	if (includes(a, a + 4, b, b + 3)) {
+		cout << "a includes b";
+	}
+	else {
+		cout << "a didnt includes b";
+	}
+	if (includes(Union, p_union, b, b + 3)) {
+		cout << "Union includes b";
+	}
+	else {
+		cout << "Union didnt includes b";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
