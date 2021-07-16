@@ -1,0 +1,49 @@
+#include <iostream>
+#include <fstream>
+#include <list>
+#include <cstdlib>
+using namespace std;
+void show(const char *str, const list<int>&L) {
+	for (list<int>::const_iterator i = L.begin(); i != L.end(); i++) {
+		cout << *i << endl;
+	}
+	cout << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	list<int>L;
+	list<int>::iterator i;
+	int x;
+	ifstream in("in");
+	while (in >> x, !in.eof()) {
+		L.push_back(x);
+	}
+	show("List", L);
+	L.push_front(1);
+	i = L.begin();
+	L.insert(++i, 2);
+	show("After insert:", L);
+	i = L.end();
+	L.insert(--i, 100);
+	show("After another insert", L);
+	i = L.begin();
+	x = *i;
+	L.pop_front();
+	cout << "Delete from the beginning" << x << " ";
+	i = L.end();
+	x = *--i;
+	L.pop_back();
+	cout << "\nDelete from the end" << x << endl;
+	show("List:", L);
+	L.remove(12);
+	show("After deleteng element = 12", L);
+	L.sort();
+	show("After sort", L);
+	L.unique();
+	show("After unique", L);
+	list<int>L1(L);
+	L.reverse();
+	show("After reverse:", L);
+	system("pause > nul");
+	return 0;
+}
