@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+#include <time.h>
+using namespace std;
+struct random_gen {
+	random_gen() {
+		srand((unsigned int)time(NULL));
+	}
+	int operator()(int n) {
+		return rand()% n;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	int a[5] = { 1,2,3,4,5 }, i;
+	random_shuffle(a, a + 5, random_gen());
+	for (i = 0; i < 5; i++) {
+		cout << a[i] << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
