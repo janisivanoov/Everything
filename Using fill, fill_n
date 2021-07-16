@@ -1,0 +1,20 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int a[5], i;
+	fill(a, a + 5, 1);
+	for (i = 0; i < 5; i++) {
+		cout << a[i];
+	}
+	cout << endl;
+	fill_n(a + 2, 2, 0);
+	for (i = 0; i < 5; i++) {
+		cout << a[i];
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
