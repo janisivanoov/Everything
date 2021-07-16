@@ -1,0 +1,26 @@
+#include <iostream>
+#include <set>
+#include <cstdlib>
+using namespace std;
+typedef set<int, less<int>>set_a;
+set_a::iterator a;
+int main() {
+	system("chcp 1251 > nul");
+	int a[4] = { 1,2,3,4 };
+	set_a s1;
+	set_a s2(a, a + 4);
+	set_a s3(s2);
+	s2.insert(1);
+	s2.insert(2);
+	for(a=s2.begin();a!=s2.end();a++){
+		cout << *a << " ";
+	}
+	cout << endl;
+	pair <set_a::iterator, set_a::iterator>p;
+	p = s2.equal_range(1);
+	cout << *(p.first) << " " << *(p.second) << endl;
+	p = s2.equal_range(2);
+	cout << *(p.first) << " " << *(p.second) << endl;
+	system("pause > nul");
+	return 0;
+}
