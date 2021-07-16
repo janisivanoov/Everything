@@ -1,0 +1,19 @@
+#include <algorithm>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+struct A {
+	int x, y;
+};
+bool f(A& a1, A& a2) {
+	return a1.x + a1.y == a2.x + a2.y;
+}
+int main() {
+	system("chcp 1251 > nul");
+	int m[8] = { 10,11,12,13,13,12,11,10 };
+	cout << *(adjacent_find(m, m + 8));
+	A ma[5] = { {1,2},{3,4},{4,3},{2,1} };
+	cout << (*adjacent_find(ma, ma + 5, f)).x << endl;
+	system("pause > nul");
+	return 0;
+}
