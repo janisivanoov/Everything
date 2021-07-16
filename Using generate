@@ -1,0 +1,18 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int f() {
+	static int i = 1;
+	return(++i) * 3;
+}
+int main() {
+	system("chcp 1251 > nul");
+	int a[5], i;
+	generate(a, a + 5, f);
+	for (i = 0; i < 5; i++) {
+		cout << a[i] << " ";
+	}
+	system("pause > nul");
+	return 0;
+}
