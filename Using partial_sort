@@ -1,0 +1,17 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	const int m = 5;
+	int a[m] = { 1,2,3,4,5 };
+	int i;
+	partial_sort(a, a + 5, a + m, greater<int>());
+	for (i = 0; i < m; i++) {
+		cout << a[i] << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
