@@ -1,0 +1,28 @@
+#include <iostream>
+#include <functional>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+struct preobr : binary_function<double, double, double> {
+	double operator()(double x, double y) const {
+		return x * x - y * y;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	const int m = 5;
+	double a[m] = { 1,2,3,4,5 }, b[m] = { 6,7,8,9,10 };
+	transform(a, a + m, b, a, preobr());
+	transform(b, b + m, b, negate<double> ());
+	int i;
+	for (i = 0; i < m; i++) {
+		cout << a[i] << " ";
+	}
+	cout << endl;
+	for (i = 0; i < m; i++) {
+		cout << b[i] << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
