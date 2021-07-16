@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+bool classs(int x) {
+	return x > 10 && x < 20;
+}
+int main() {
+	system("chcp 1251 > nul");
+	vector<int> a, v;
+	vector<int>::iterator i;
+	for (int k = 1; k < 10; k++) {
+		a.push_back(k * 10);
+	}
+	for (i = a.begin(); i != a.end(); i++) {
+		cout << *i << " ";
+	}
+	cout << endl;
+	replace_copy_if(a.begin(), a.end(), inserter(v, v.begin()), classs, 11);
+	for (i = v.begin(); i != v.end(); i++) {
+		cout << *i << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
