@@ -1,0 +1,15 @@
+#include <iostream>
+#include <algorithm>
+#include <functional>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	const int m = 5;
+	double a[m] = { 1,2,3,4,5 }, b[m] = { 6,7,8,9,10 }, c[m] = { 1,6,2,7,11 };
+	cout << lexicographical_compare(a, a + m, b, b + m);
+	cout << lexicographical_compare(a, a + m, c, c + m);
+	cout << lexicographical_compare(a, a + m, b, b + m, greater<int>());
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
