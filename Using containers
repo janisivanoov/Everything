@@ -1,0 +1,65 @@
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <set>
+#include <map>
+#include <cstdlib>
+using namespace std;
+typedef set<int, less<int>>set_i;
+typedef map < string, set_i, less<string>map_ss;
+bool wordread(ifstream& in, string& word, int& num) {
+	char ch;
+	for (;;) {
+		in.get(ch);
+		if (in.fail()) {
+			return false;
+		}
+		if (isalpha(ch) || ch == '_') {
+			break;
+		}
+		if (ch == '\n') {
+			num++;
+		}
+		word = "";
+		do {
+			word += tolower(ch);
+			in.get(ch);
+		} while (!in.fail() && (isalpha(ch) || ch == '_'));
+	}
+	if (in.fail()) {
+		return false;
+	}
+	in.putback(ch);
+	return true;
+}
+int main() {
+	system("chcp 1251 > nul");
+	map_ss m;
+	map_ss::iterator im;
+	set_i::iterator is, isbegin, isend;
+	string word;
+	int num = 1;
+	ifstream in("file");
+	if (!in) {
+		cout << "Cannot open file\n";
+		exit(1);
+	}
+	while (wordread(in, word, num)) {
+		im = m.find(word);
+		if (im == m.end()) {
+			(map_ss::value_type(word, set_i())).first;
+		}
+		(*im).second.insert(num);
+	}
+	for (im = m.begin; im != m.end(); im++) {
+		cout << setiosflags(ios::left) << setw(11) << (*im.first.c_str());
+		isbegin = (*im).second.begin();
+		isend = (*im).second.end();
+		for (is = isbegin; is != isend; is++) {
+			cout << " " << *is;
+		}
+		cout << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
