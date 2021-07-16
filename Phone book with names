@@ -1,0 +1,33 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <map>
+#include <cstdlib>
+using namespace std;
+typedef map < string, long, less <string> map_sl;
+int main() {
+	system("chcp 1251 > nul");
+	map_sl ml;
+	ifstream in("in");
+	string str;
+	long num;
+	while (in >> num, !in.eof()) {
+		in.get();
+		getline(in, str);
+		ml[str] = num;
+		cout << str << " " << num << endl;
+	}
+	m1["Janis I."] = 1234567;
+	map_sl::iterator i;
+	cout << "ml:" << endl;
+	for (i = ml.begin(); i != ml.end(); i++) {
+		cout << (*i).first << " " << (*i).second << endl;
+	}
+	i = ml.begin();
+	i++;
+	cout << "Second element:";
+	cout << (*i).first << " " << (*i).second << endl;
+	cout << "Antonis:" << ml["Antonis"] << endl;
+	system("pause > nul");
+	return 0;
+}
