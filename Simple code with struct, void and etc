@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string> 
+#include <cstdlib>
+using namespace std;
+enum class MonsterType{
+	OGRE,
+	GOBLIN,
+	SKELETON,
+	ORC,
+	TROLL
+};
+struct Monster{
+	MonsterType type;
+	string name;
+	int health;
+};
+string getMonsterTypeString(Monster monster){
+	if (monster.type == MonsterType::OGRE) {
+		return "Ogre";
+	}
+	if (monster.type == MonsterType::GOBLIN) {
+		return "Goblin";
+	}
+	if (monster.type == MonsterType::SKELETON) {
+		return "Skeleton";
+	}
+	if (monster.type == MonsterType::ORC) {
+		return "Orc";
+	}
+	if (monster.type == MonsterType::TROLL) {
+		return "Troll";
+	}
+	return "Unknown";
+}
+void printMonster(Monster monster){
+	cout << "This " << getMonsterTypeString(monster);
+	cout << " is named " << monster.name << " and has " << monster.health << " health.\n";
+}
+int main(){
+	system("chcp 1251 > nul");
+	Monster goblin = { MonsterType::GOBLIN, "Janis", 170 };
+	Monster orc = { MonsterType::ORC, "Ivan", 35 };
+	printMonster(goblin);
+	printMonster(orc);
+	system("pause > nul");
+	return 0;
+}
