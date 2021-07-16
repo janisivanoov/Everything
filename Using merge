@@ -1,0 +1,17 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	const int m = 5;
+	double a[m] = { 1,2,3,4,5 }, b[m] = { 6,7,8,9,10 }, c[m * 3];
+	int i;
+	merge(a, a + m, b, b + m, c);
+	for (i = 0; i < m * 3; i++) {
+		cout << c[i] << " ";
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
