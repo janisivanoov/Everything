@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int b[4], a[5] = { 1,2,3,4,5 }, i;
+	copy(a + 1, a + 5, b);
+	for (i = 0; i < 4; i++) {
+		cout << b[i];
+	}
+	cout << endl;
+	copy(a + 1, a + 5, a);
+	for (i = 0; i < 4; i++) {
+		cout << a[i];
+	}
+	cout << endl;
+	copy_backward(b, b + 3, b + 4);
+	for (i = 0; i < 4; i++) {
+		cout << b[i];
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
