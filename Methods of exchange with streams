@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	ofstream out("test");
+	if (!out) {
+		cout << "Cannot open file 'test' for writing" << endl;
+		return 1;
+	}
+	double num = 100.45;
+	char str[] = "This is a test";
+	out.write(reinterpret_cast<char*>(&num), sizeof(double));
+	out.write(str, strlen(str));
+	out.close();
+	ifstream in("test", ios::in | ios::_Nocreate);
+	if (!in) {
+		cout << "cannot open file 'test' for reading" << endl;
+		return 1;
+	}
+	double check_num;
+	char check_str[60];
+	in.read(reinterpret_cast<char*>(&check_num), sizeof(double));
+	in.read(check_str, 60);
+	int lstr = in.gcount();
+	check_str[lstr] = 0;
+	cout << check_num << ' ' << check_str << endl;
+	in.close();
+	system("pause > nul");
+	return 0;
+}
