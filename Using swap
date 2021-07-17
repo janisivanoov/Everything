@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void swap(int &x, int &y){
+	int temp = x;
+	x = y;
+	y = temp;
+}
+int main(){
+system("chcp 1251 > nul");
+	int x = 5;
+	int y = 7;
+	swap(x, y);
+	if (x == 7 && y == 5){
+		cout << "It works!";
+ }
+	else{
+		cout << "It's broken!";
+ }
+        system("pause > nul");
+	return 0;
+}
