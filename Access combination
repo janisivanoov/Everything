@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class A {
+private:
+	int privdataA;
+protected:
+	int protdataA;
+public:
+	int pubdataA;
+};
+class B : public A {
+public:
+	void funct() {
+		int a;
+		//a = privdataA; you cant
+		a = protdataA;
+		a = pubdataA;
+	}
+};
+class C : private A {
+public:
+	void funct() {
+		int a;
+		//a = privdataA; you cant
+		a = pubdataA;
+		a = protdataA;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	int a;
+	B objB;
+	//a = objB.privdataA; you cant
+	//a = objB.protdataA; you cant
+	a = objB.pubdataA;
+	system("pause > nul");
+	return 0;
+}
