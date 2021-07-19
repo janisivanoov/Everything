@@ -1,0 +1,86 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class employee {
+private:
+	char name[ LEN ];
+	unsigned long number;
+public:
+	void getdata() {
+		cout << "Enter surname:";
+		cin >> name;
+		cout << "Enter phone number:";
+		cin >> number;
+	}
+	void putdata() const {
+		cout << "Surname:" << name << endl;
+		cout << "Phone number:" << number << endl;
+	}
+};
+class manager : public employee {
+private:
+	char title[LEN];
+	double dues;
+public:
+	void getdata() {
+		employee::getdata();
+		cout << "Title:";
+		cin >> title;
+		cout << "Enter a dues:";
+		cin >> dues;
+	}
+	void putdata() const {
+		employee::putdata();
+		cout << "Title" << title << endl;
+		cout << "Dues" << dues << endl;
+	}
+};
+class scientist : public employee {
+private:
+	int pubs;
+public:
+	void getdata() {
+		employee::getdata();
+		cout << "Enter number of pubs:";
+		cin >> pubs;
+	}
+	void putdata() const {
+		employee::putdata();
+		cout << "Number of pubs:" << pubs << endl;
+	}
+};
+class laborer : public employee {
+
+};
+class foreman : public laborer {
+private:
+	float quotas;
+public:
+	void getdata() {
+		laborer::getdata();
+		cout << "Enter a quotas:";
+		cin >> quotas;
+	}
+	void putdata() const {
+		laborer::putdata();
+		cout << "Quota:" << quotas;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	laborer l1;
+	foreman f1;
+	cout << endl;
+	cout << "Entering Information about first laborer:";
+	l1.getdata();
+	cout << "Entering Information about firts foreman:";
+	f1.getdata();
+	cout << endl;
+	cout << "Information about first laborer:";
+	l1.putdata();
+	cout << "Information about first foreman:";
+	f1.putdata();
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
