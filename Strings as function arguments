@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	void dispstr(char*);
+	char str[] = "Hello there!";
+	dispstr(str);
+	system("pause > nul");
+	return 0;
+}
+void dirpstr(char* ps) {
+	while (*ps) {
+		cout << *ps++;
+	}
+	cout << endl;
+}
