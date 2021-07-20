@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int var1 = 11;
+	int var2 = 22;
+	cout << &var1 << &var2 << endl;
+	int* ptr;
+	ptr = &var1;
+	cout << ptr << endl;
+	ptr = &var2;
+	cout << ptr << endl;
+	system("pause > nul");
+	return 0;
+}
