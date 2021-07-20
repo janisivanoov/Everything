@@ -1,0 +1,110 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+class student {
+private:
+	string school;
+	string degree;
+public:
+	void getedu() {
+		cout << "Enter a name of school:";
+		cin >> school;
+		cout << "Enter a level of education:";
+		cin >> degree;
+	}
+	void putedu() {
+		cout << "Place of education" << school << endl;
+		cout << "Degree level:" << degree << endl;
+	}
+};
+class employee {
+private:
+	string name;
+	unsigned long number;
+public:
+	void getdata() {
+		cout << "Enter a surname:";
+		cin >> name;
+		cout << "Enter a number:";
+		cin >> number;
+	}
+	void putdata() const {
+		cout << "Surname" << name << endl;
+		cout << "Number:" << number << endl;
+	}
+};
+class manager {
+private:
+	string title;
+	double dues;
+	employee emp;
+	student stu;
+public:
+	void getdata() {
+		emp.getdata();
+		cout << "Enter a title";
+		cin >> title;
+		cout << "Enter a dues:";
+		cin >> dues;
+		stu.getedu();
+	}
+	void putdata() const {
+		emp.putdata();
+		cout << "Title:" << title << endl;
+		cout << "Des:" << dues << endl;
+		stu.putedu();
+	}
+};
+class scientinst {
+private:
+	int pubs;
+	employee emp;
+	student stu;
+public:
+	void getedata() {
+		emp.getdata();
+		cout << "Enter a pubs:";
+		cin >> pubs;
+		stu.getedu();
+	}
+	void putdata() const {
+		emp.putdata();
+		cout << "Pubs number:" << pubs << endl;
+		stu.putedu();
+	}
+};
+class labore {
+private:
+	employee emp;
+public:
+	void getdata() {
+		emp.getdata();
+	}
+	void putdata() const {
+		emp.putdata();
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	manager m1;
+	scientist s1, s2;
+	laborer l1;
+	cout << endl;
+	cout << "Info about first manager:";
+	m1.getdata();
+	cout << "Info about first scientist:";
+	s1.getdata;
+	cout << "Enter info about second scientist";
+	s2.getdata();
+	cout << "enter info about first labore";
+	l1.getdata();
+	cout << "All info:";
+	m1.putdata();
+	s1.putdata();
+	s2.putdata();
+	l1.putdata();
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
