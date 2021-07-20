@@ -1,0 +1,14 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char str1[] = "Knowing throu the array";
+	char* str2 = "Knowing throu the pointer";
+	cout << str1 << endl;
+	cout << str2 << endl;
+	str2++;
+	cout << str2 << endl;
+	system("pause > nul");
+	return 0;
+}
