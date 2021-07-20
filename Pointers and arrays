@@ -1,0 +1,12 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	int intarray[5] = { 11,22,33,44,55 };
+	for (int j = 0; j < 5; j++) {
+		cout << intarray[j] << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
