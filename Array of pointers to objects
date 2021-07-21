@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class person {
+private:
+	char name[10];
+public:
+	void setname() {
+		cout << "Enter a name:";
+		cin >> name;
+	}
+	void printname() {
+		cout << "\nName:" << name << endl;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	person* persptr[10];
+	int n = 0;
+	char choise;
+	do {
+		persptr[n] = new person;
+		persptr[n]->setname();
+		n++;
+		cout << "Continue to work(y/n):";
+		cin >> choise;
+	}
+	while (choise == 'y') {
+		for (int j = 0; j < n; j++) {
+			cout << "Info about number:";
+			persptr[j]->printname();
+		}
+		cout << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
