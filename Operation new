@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char* str = "Hello there";
+	int len = strlen(str);
+	char* ptr;
+	strcpy(ptr, str);
+	cout << "ptr=" << ptr << endl;
+	delete[] ptr;
+	system("pause > nul");
+	return 0;
+}
