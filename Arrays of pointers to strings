@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+const int days = 7;
+int main() {
+	system("chcp 1251 > nul");
+	char* arrptrs[days] = { "Mon", "Tue","Wed","Thu","Fri","Sat","Sun" };
+	for (int j = 0; j < days; j++) {
+		cout << arrptrs[j] << endl;
+	}
+	system("pause > nul");
+	return 0;
+}
