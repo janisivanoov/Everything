@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class Distance {
+private:
+	int feet;
+	float inches;
+public:
+	void getdist() {
+		cout << "Enter feet";
+		cin >> feet;
+		cout << "\nEnter inches";
+		cin >> inches;
+	}
+	void showdist() const {
+		cout << "Feet:" << feet << endl;
+		cout << "Inches:" << inches << endl;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	Distance dist;
+	dist.getdist();
+	dist.showdist();
+	Distance* distptr;
+	distptr = new Distance;
+	distptr->getdist();
+	distptr->showdist();
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
