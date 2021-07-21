@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	void copystr(char*, const char*);
+	char* str1 = "Hello there ";
+	char str2[11];
+	copystr(str2, str1);
+	cout << str2 << endl;
+	system("pause > nul");
+	return 0;
+}
+void copystr(char* dest, const char* str) {
+	while (*src) {
+		*dest++ = *src++;
+	}
+	*dest = '\0';
+}
