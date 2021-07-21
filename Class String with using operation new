@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+using namespace std;
+class String {
+private:
+	char* str;
+public:
+	String(char* s) {
+		int length = strlen(s);
+		str = new char[length + 1];
+		strcpy(str, s);
+	}
+	~String() {
+		cout << "\nDeleting" << endl;
+		delete[]str;
+	}
+	void display() {
+		cout << str << endl;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	String s1 = "Hello there";
+	cout << "s1";
+	s1.display();
+	system("pause > nul");
+	return 0;
+}
