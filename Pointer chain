@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+struct link {
+	int data;
+	link* next;
+};
+class linklist {
+private:
+	link* first;
+public:
+	linklist() {
+		first = NULL;
+	}
+	void additem(int d);
+	void display();
+};
+void linklist::additem(int d) {
+	link* newlink = new link;
+	newlink->data = d;
+	newlink->next = first;
+	first = newlink;
+}
+void linklist::display() {
+	link* current = first;
+	while (current) {
+		cout << current->data << endl;
+		current = current->next;
+	}
+}
+int main() {
+	system("chcp 1251 > nul");
+	linklist li;
+	li.additem(11);
+	li.additem(22);
+	li.additem(33);
+	li.additem(44);
+	li.display();
+	system("pause > nul");
+	return 0;
+}
