@@ -1,0 +1,69 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class person {
+protected:
+	char name[40];
+public:
+	void getname() {
+		cout << "Enter a name:";
+		cin >> name;
+	}
+	void putname() {
+		cout << "Name" << name << endl;
+	}
+	virtual void getdata() = 0;
+	virtual void isoutstanding() = 0;
+};
+class student : public person {
+private:
+	float gpa;
+public:
+	void getdata() {
+		cout << "Enter GPA:";
+		cin >> gpa;
+	}
+	bool isoutstanding() {
+		return (gpa > 3.5) ? true : false;
+	}
+};
+class professor :public person {
+private:
+	int numpubs;
+public:
+	void getdata() {
+		person::getname();
+		cout << "Number of publications";
+		cin >> numpubs;
+	}
+	bool isoutstanding() {
+		return (numpubs > 100) ? true : false;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	person* persPTR[100];
+	int n = 0;
+	do {
+		cout << "Student(s) or professor(p):";
+		cin >> choice;
+		if (choice == 's') {
+			persPtr[n] = new student;
+		}
+		else {
+			persPtr[n] = new professor;
+		}
+		persPtr[n++]->getdata();
+		cout << "Another person?(y/n)";
+		cin >> choice;
+	} while (choice == 'y');
+	for (int j = 0; j < n; j++) {
+		persPtr[j]->putname();
+		if (persPtr[j]->isoutstanding()) {
+			cout << "Thats a popular person!";
+		}
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
