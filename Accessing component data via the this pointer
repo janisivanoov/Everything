@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class what {
+private:
+	int alpha;
+public:
+	void tester() {
+		this->alpha = 11;
+		cout << this->alpha;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	what w;
+	w.tester();
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
