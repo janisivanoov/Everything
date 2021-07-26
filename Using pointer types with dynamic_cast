@@ -1,0 +1,38 @@
+#include <iostream>
+#include <typeinfo>
+#include <cstdlib>
+using namespace std;
+class Base {
+protected:
+	int ba;
+public:
+	Base():ba(0){ }
+	Base(int b):ba(b){ }
+	virtual void vertFunc(){ }
+	void show() {
+		cout << "Base ba=" << ba << endl;
+	}
+};
+class Derv : public Base {
+private:
+	int da;
+public:
+	Derv(int b, int d) :da(d) {
+		ba = b;
+	}
+	void show() {
+		cout << "Derv ba:" << ba << "da" << da << endl;
+	}
+};
+int main() {
+	system("chcp 1251 > nul");
+	Base* pBase = new Base(11);
+	Derv* pDerv = new Derv(22, 33);
+	pBase = dynamic_cast<Base*>(pDerv);
+	pBase -> show();
+	pBase = new Derv(44, 55);
+	pDerv = dynamic_cast<Derv*>(pBase);
+	pDerv->show();
+	system("pause > nul");
+	return 0;
+}
