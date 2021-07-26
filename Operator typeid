@@ -1,0 +1,22 @@
+#include <iostream>
+#include <typeinfo>
+#include <cstdlib>
+using namespace std;
+class Base {
+	virtual void virtFuc(){ }
+};
+class Derv1: public Base{ };
+class Derv2: public Base{ };
+void displayname(Base* pB) {
+	cout << "Pointe on object";
+	cout << typeid(*pB).name() << endl;
+}
+int main() {
+	system("chcp 1251 > nul");
+	Base* pBase = new Derv1;
+	displayname(pBase);
+	pBase = new Derv2;
+	displayname(pBase);
+	system("pause > nul");
+	return 0;
+}
