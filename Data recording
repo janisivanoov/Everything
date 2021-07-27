@@ -1,0 +1,18 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char ch = 'x';
+	int j = 99;
+	double d = 9.06;
+	string str1 = "Hello";
+	string str2 = "Yellow";
+	ofstream outfile("text.txt");
+	outfile << ch << j << ' ' << d << str1 << ' ' << str2 << endl;
+	cout << "File done" << endl;
+	system("pause > nul");
+	return 0;
+}
