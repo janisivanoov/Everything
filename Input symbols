@@ -1,0 +1,17 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	string str = "Hello everyone there,"
+		"Welcom to Cyprus";
+	ofstream outfile("text.txt");
+	for (int j = 0; j < str.size(); j++) {
+		outfile.put(str[j]);
+	}
+	cout << "Program is done" << endl;
+	system("pause > nul");
+	return 0;
+}
