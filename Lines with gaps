@@ -1,0 +1,12 @@
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	ofstream outfile("text.txt");
+	outfile << "Hello everyone\n";
+	outfile << "Welcome there\n";
+	outfile << "Hello from Cyprus\n";
+	system("pause > nul");
+	return 0;
+}
