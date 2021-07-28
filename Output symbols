@@ -1,0 +1,16 @@
+#include <fstream>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	system("chcp 1251 > nul");
+	char ch;
+	ifstream infile("text.txt");
+	while (infile) {
+		infile.get(ch);
+		cout << ch;
+	}
+	cout << endl;
+	system("pause > nul");
+	return 0;
+}
