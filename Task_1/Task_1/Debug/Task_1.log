@@ -1,0 +1,4 @@
+﻿  Task_1.cpp
+C:\Users\Janis\source\repos\Task_1\Task_1\Task_1.cpp(6,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Janis\source\repos\Task_1\Task_1\Task_1.cpp(7,37): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Task_1.vcxproj -> C:\Users\Janis\source\repos\Task_1\Debug\Task_1.exe
