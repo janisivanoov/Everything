@@ -1,0 +1,3 @@
+﻿  Task_01_11_2021_1.cpp
+C:\Users\Janis\source\repos\Task_01_11_2021_1\Task_01_11_2021_1\Task_01_11_2021_1.cpp(20,32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Task_01_11_2021_1.vcxproj -> C:\Users\Janis\source\repos\Task_01_11_2021_1\Debug\Task_01_11_2021_1.exe
